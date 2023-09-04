@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-pass apply and renewal</title>
+    <link rel="stylesheet" href="Bus_Project_Style.css">
+</head>
+<body>
+    <header>
+        <img src="icons8-bus-unscreen.gif" class="logo">
+        <ul class="navigation">
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#about">About us</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Bus pass <span id="text">Renewal</span></h2>
+            <p>Unleash Your Travels, Anytime, Anywhere</p>
+            <div id="btns">
+                <a href="Renewal.html" class="btn">Renewal</a>
+                <a href="Apply.html" class="btn">Apply</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="login" id="login">
+        <div class="title">
+            <h2><span>L</span>ogin</h2>
+            <p>"Applying for a new bus pass is easy! Visit our website, complete the online form, upload your photo, and provide ID proof. Pay the fee securely. Get your online-pass delivered within days. Enjoy convenient and affordable travel on our buses. Apply now and ride with us!"</p>
+        </div>
+        <div class="row">
+            <div class="form col">
+                <h2><span>W</span>elcome to login!...</h2>
+                <form action="">
+                    <div class="inputbox">
+                        <input type="text" id="email" name="email" required>
+                        <span>Email</span>
+                      </div>
+                      <div class="inputbox">
+                        <input type="password" id="password" name="password" required>
+                        <span>Password</span>
+                      </div>
+                      <div class="inputbox">
+                        <button class="loginbtn" value="submit">Submit</button>
+                      </div>
+                </form>
+            </div>
+            <div class="col">
+                <div class="imgbox login_image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="row">
+            <div class="col" id="aboutus_para">
+                <h2><span>A</span>bout us</h2>
+                <p>Are you tired of standing in long queues to get your bus pass? Registering online is the way to go! With our convenient Bus Pass Register page, you can easily apply for and manage your bus pass from the comfort of your home. Enjoy a hassle-free commute and never worry about missing your bus again. Here's all you need to know about our Innovation.
+                </p>
+            </div>
+            <div class="col">
+                <div class="imgbox about_image">
+                    <img src="About_Us_image.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Java script -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+        let typingtext = new Typed("#text",{
+            strings : ["Renewal","Apply"],loop : true,
+            typespeed : 200,
+            backspeeed : 200,
+            backdelay : 4000
+        })
+
+        window.addEventListener('scroll',function(){
+            const header = document.querySelector('header');
+            header.classList.toggle("sticky",window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>

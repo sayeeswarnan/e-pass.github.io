@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Pass renewal</title>
+    <link rel="stylesheet" href="Bus_Project_Style.css">
+    <style>
+        body{
+            overflow:hidden ;
+        }
+    </style>
+    
+</head>
+<body>
+    <section class="renewalSection">
+        <div class="row">
+            <div class="form col">
+                <form action="#">
+                    <h2><span>R</span>enewal</h2>
+                    <div class="inputbox">
+                        <input type="text" class="Username" name="Username" required><br>
+                        <span>Username</span>
+                    </div>
+                    <div class="inputbox">
+                        <label for="region">Select region</label>
+                        <select id="region" name="region" required>
+                            <option value="">Select region</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Coimbatore">Coimbatore</option>
+                            <option value="Madurai">Madurai</option>
+                            <!-- add more if you need -->
+                        </select>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" class="clg" name="clg" required><br>
+                        <span>Branch</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" class="passno" name="passno" required><br>
+                        <span>Pass no</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="email" class="email" name="email" required><br>
+                        <span>Email</span>
+                    </div>
+
+                    <div class="inputbox">
+                        <button class="loginbtn renewbtn" value="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <div class="imgbox renew_image">
+                </div>
+            </div>
+        </div>
+    </section> 
+    <script>
+
+document.querySelector('.renewbtn').addEventListener('click', e => {
+            const formInputs = document.querySelectorAll('.form input[required]');
+            let valid = true;
+
+            formInputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    valid = false;
+                }
+            });
+
+            if (!valid) {
+                alert("Please fill out all the required fields properly.");
+            } else {
+                alert("Registered successfully!...");
+            }
+        });
+        document.querySelector('.renewbtn').addEventListener('click', e => {
+        const stateregion = document.getElementById('region');
+        const selectedregion = stateregion.value;
+
+        if (selectedregion === '') {
+            alert("Please select a state from the dropdown.");
+        } else {
+            alert(`You selected: ${selectedregion}. Registered successfully!...`);
+        }
+    });
+    </script>
+</body>   
+</html>

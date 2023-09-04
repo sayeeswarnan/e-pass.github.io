@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Pass apply</title>
+    <link rel="stylesheet" href="Bus_Project_Style.css">
+    <style>
+        body{
+            overflow:hidden ;
+        }
+    </style>
+</head>
+<body>
+    <section class="applySection">
+        <div class="row">
+            <div class="form col">
+                <form action="#">
+                    <h2><span>A</span>pply</h2>
+                    <div class="inputbox">
+                        <input type="text" class="Username" name="Username" required><br>
+                        <span>Username</span>
+                    </div>
+                    <div class="inputbox">
+                        <label for="region">Select region</label>
+                        <select id="region" name="region" required>
+                            <option value="">Select region</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Coimbatore">Coimbatore</option>
+                            <option value="Madurai">Madurai</option>
+                            <!-- add more if you need -->
+                        </select>
+                    </div>
+                    
+                    <div class="inputbox">
+                        <input type="text" class="clg" name="clg" required><br>
+                        <span>Branch</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="email" class="email" name="email" required><br>
+                        <span>Email</span>
+                    </div>
+                    <div class="inputbox">
+                        <button class="loginbtn submitbtn" value="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <div class="imgbox apply_image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        
+    document.querySelector('.submitbtn').addEventListener('click', e => {
+        // Get the form inputs by their IDs
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+
+        // Check if any of the fields are empty or contain incorrect data
+        if (!firstName || !lastName || !email || !isValidEmail(email)) {
+            alert('Please fill the form correctly.');
+        } else {
+            alert('Applied Successfully! Please Check Registered Mail');
+            // You can submit the form or perform other actions here
+        }
+    });
+
+    
+    function isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+    
+    document.querySelector('.renewbtn').addEventListener('click', e => {
+        const stateregion = document.getElementById('region');
+        const selectedregion = stateregion.value;
+
+        if (selectedregion === '') {
+            alert("Please select a state from the dropdown.");
+        } else {
+            alert(`You selected: ${selectedregion}. Registered successfully!...`);
+        }
+    });
+
+
+</script>
+
+
+</body>
+</html>
